@@ -1,13 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <meta http-equiv='X-UA-Compatible' content='ie=edge' />
     <title>Lab Mongoose Movies</title>
-    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel='shortcut icon' href='/images/favicon.ico' type='image/x-icon' />
+    <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
+    <header>
+      <h1><a href='/'>Mongoose Movies</a></h1>
+      <nav>
+        <ul>
+          <li><a {{#if pageCeleb}} class="active"{{/if}} href='/celebrities'>Celebrities</a></li>
+          <li><a {{#if pageCreate}} class="active"{{/if}} href='/celebrities/create'>Create</a></li>
+          <li><a href='/' {{#if pageHome}} class="active"{{/if}}>Home</a></li>
+
+        </ul>
+      </nav>
+    </header>
     {{{body}}}
   </body>
 </html>

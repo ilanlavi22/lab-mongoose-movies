@@ -1,8 +1,10 @@
 const express = require('express');
-const path = require('path');
 const favicon = require('serve-favicon');
-const hbs = require('hbs');
 const logger = require('morgan');
+const path = require('path');
+
+const hbs = require('hbs');
+
 
 const app = express();
 
@@ -30,8 +32,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public/images/favicon.ico')));
 
 // Mount base router on app, after setting up other middleware
-const baseRouter = require('./routes');
 
+const celebrities = require("./routes/celebrities")
+app.use("/", celebrities);
+
+const baseRouter = require('./routes');
 app.use('/', baseRouter);
 
 // Catch 404 and render a not-found.hbs template

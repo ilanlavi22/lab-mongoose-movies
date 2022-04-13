@@ -1,0 +1,13 @@
+<div class='content list'>
+  <h3>Our Selected Celebrities</h3>
+  {{#each celebrities}}
+    <div class='item row'>
+      <a href='celebrities/{{id}}'>{{name}}</a>
+      <div class='buttons-container'>
+        <form method='get' action='celebrities/{{id}}'><button>View</button></form>
+        <form method='post' action='celebrities/{{id}}/delete'><button class='delete'>Delete</button></form>
+      </div>
+
+    </div>
+  {{/each}}
+</div>
